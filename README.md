@@ -12,4 +12,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Typsense
 
-Make sure you get the code from here for backend Typesense search API.
+Make sure you get the code from [here](https://github.com/venkunikku/typesense-fastapi) for backend Typesense search API.
