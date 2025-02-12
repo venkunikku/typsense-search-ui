@@ -3,8 +3,10 @@ export default function SearchResults({ data }) {
     return null;
   }
   const hits = data?.hits || [];
+  const searchTime = data?.search_time_ms || '';
   return (
     <>
+    <div><label>Search Time (ms): </label>{searchTime}</div>
       <div className="grid grid-flow-col grid-rows-4 gap-4">
         {hits.length > 0 ? (
           hits.map((rec, index) => (
