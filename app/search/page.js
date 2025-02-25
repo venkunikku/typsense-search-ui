@@ -1,7 +1,7 @@
 "use client";
 import SearchResults from "@/components/search_results";
 import { useState, useEffect } from "react";
-import EnglishWordCorrection from "./english_word_correction";
+import EnglishWordCorrection from "@/components/english_word_correction";
 
 export default function Search() {
   const [searchTerm, setSearchTerm] = useState();
@@ -131,16 +131,16 @@ export default function Search() {
       const dataCorrection = await getSearchDataCorrection(searchTerm);
       setSearchDataCorrection(dataCorrection);
     };
-    const fetchMultiSearchData = async () => {
-      const data = await getMultiSearchData(searchTerm);
-      if (data) {
-        setSearchData(data?.results[0]);
-        setSearchDataCorrection(data?.results[1]);
-      }
-    };
-    // fetchDataCorrection();
-    // fetchData();
-    fetchMultiSearchData();
+    // const fetchMultiSearchData = async () => {
+    //   const data = await getMultiSearchData(searchTerm);
+    //   if (data) {
+    //     setSearchData(data?.results[0]);
+    //     setSearchDataCorrection(data?.results[1]);
+    //   }
+    // };
+    fetchDataCorrection();
+    fetchData();
+    // fetchMultiSearchData();
   }, [searchTerm]);
 
   const onInputChange = (event) => {
